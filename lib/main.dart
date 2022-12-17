@@ -1,10 +1,15 @@
 import 'package:depremzede/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 // running the constructor 
-void main() {
+void main() async {
+
+  // add the permission request 
   runApp(const DepremzedeApp());
+  await Permission.location.request(); 
+  await Permission.bluetooth.request();
 }
 
 class DepremzedeApp extends StatelessWidget {
@@ -19,7 +24,7 @@ class DepremzedeApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
           scaffoldBackgroundColor: Color.fromRGBO(193, 193, 193, 1),
           colorScheme: Theme.of(context).colorScheme.copyWith(
-                primary: Color.fromARGB(255, 60, 179, 113),
+                primary: Color.fromRGBO(133, 209, 36, 1),
               ),
         ),
         initialRoute: '/',

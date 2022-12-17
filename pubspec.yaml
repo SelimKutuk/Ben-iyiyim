@@ -37,7 +37,10 @@ dependencies:
   flutter_blue: ^0.8.0
   get: ^4.6.5
   http: ^0.13.5
-  google_nav_bar: ^5.0.6
+  google_maps_flutter: ^2.2.2
+  permission_handler: ^10.2.0
+  geolocator: ^9.0.2
+  geocoding: ^2.0.5
 dev_dependencies:
   flutter_test:
     sdk: flutter

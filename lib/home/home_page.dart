@@ -4,8 +4,7 @@ import 'package:depremzede/widgets/map/map_page.dart';
 import 'package:depremzede/widgets/notification/notification_page.dart';
 import 'package:depremzede/widgets/whistle/whistle_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
