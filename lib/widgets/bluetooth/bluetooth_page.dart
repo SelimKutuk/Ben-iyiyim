@@ -5,9 +5,9 @@ class BluetoothPage extends StatelessWidget {
 // check the bluetooth operationns 
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
-        body: Container(),
-      ); 
+      return Container(
+        child: Center(child: Text("Bluetooth page")),
+      );
 
   }
 }

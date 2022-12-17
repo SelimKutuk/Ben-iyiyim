@@ -9,8 +9,8 @@ class WelcomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(),
+    return Container(
+       child:  Center(child: Text("Welcome page"))
     );
   }
 }

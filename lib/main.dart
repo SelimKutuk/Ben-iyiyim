@@ -17,7 +17,7 @@ class DepremzedeApp extends StatelessWidget {
         title : 'Depremzede',
         theme: ThemeData(
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255),
+          scaffoldBackgroundColor: Color.fromRGBO(193, 193, 193, 1),
           colorScheme: Theme.of(context).colorScheme.copyWith(
                 primary: Color.fromARGB(255, 60, 179, 113),
               ),
@@ -25,7 +25,7 @@ class DepremzedeApp extends StatelessWidget {
         initialRoute: '/',
         // configrations the route 
         routes: { 
-          '/': (context) => MapPage(),
+          '/': (context) => HomePage(),
           
         },
       );     

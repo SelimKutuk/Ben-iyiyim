@@ -8,8 +8,8 @@ class WhistlePage extends StatelessWidget {
  // manuel bir şekilde acil durumda app üzerinden düdük çalma 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-       body: Container(),
+    return Container(
+       child:  Center(child: Text("Whistle page"))
     ); 
   }
 }
