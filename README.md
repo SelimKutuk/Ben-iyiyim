@@ -1,7 +1,6 @@
-# depremzede
+# Depremzede
 
-A new Flutter project.
-
+Deprem anında iletişim sorunlarını çözmek için tasarlandı (MVP konseptidir.)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
