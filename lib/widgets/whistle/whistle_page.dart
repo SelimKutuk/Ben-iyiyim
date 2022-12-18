@@ -1,5 +1,6 @@
 import 'package:depremzede/ui/ui.dart';
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 
 class WhistlePage extends StatefulWidget {
   const WhistlePage({Key? key}) : super(key: key);
@@ -35,8 +36,12 @@ class _WhistlePageState extends State<WhistlePage> {
               text: "Sesini duyurmak için butona bas!",
             ),
             LargeCircleBtn(
-              onTap: () {
+              onTap: () async {
                 // just audio üzerinden ses çalınacak !!
+                final player = AudioPlayer(); // Create a player
+                final duration = await player.setUrl(// Load a URL
+                    'file:///storage/emulated/0/Music/siren.mp3');
+                    await player.play(); 
               },
               imagePath: "assets/icon/whistle_green.png",
             ),
@@ -49,7 +54,7 @@ class _WhistlePageState extends State<WhistlePage> {
                 color: Color.fromRGBO(255, 255, 255, 1),
               ),
               child: Padding(
-                padding: const EdgeInsets.only(bottom:8.0,left:8.0),
+                padding: const EdgeInsets.only(bottom: 8.0, left: 8.0),
                 child: SwitchListTile(
                   activeTrackColor: Colors.green,
                   inactiveTrackColor: Colors.green,
