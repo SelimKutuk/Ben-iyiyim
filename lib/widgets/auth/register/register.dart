@@ -147,7 +147,7 @@ class RegsiterPage extends StatelessWidget {
                               print(streetController.text);
                               print(phoneController.text);
                               var url = Uri.http(
-                                  '34.118.42.183', '/api/auth/register');
+                                  'localhost:5000', '/api/auth/register');
                               var response = await http.post(url, body: {
                                 'tc': '$idController.text',
                                 'name': '$nameController.text',

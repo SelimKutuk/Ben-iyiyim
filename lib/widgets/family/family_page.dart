@@ -1,5 +1,4 @@
 import 'package:depremzede/ui/ui.dart';
-import 'package:depremzede/widgets/auth/login/login.dart';
 import 'package:depremzede/widgets/auth/register/register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,9 +19,7 @@ class FamilyPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * .30,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: const Radius.circular(20),
-                      topRight: const Radius.circular(20)),
+                  
                   image: DecorationImage(
                       image: AssetImage("assets/images/galata_tower.png"),
                       fit: BoxFit.cover)),
@@ -45,7 +42,7 @@ class FamilyPage extends StatelessWidget {
                       ),
                       IconButton(
                           onPressed: () {
-                           Get.to(RegsiterPage()); 
+                            Get.to(RegsiterPage());
                           },
                           icon: Image.asset(
                             "assets/icon/logout_ico.png",
@@ -79,7 +76,14 @@ class FamilyPage extends StatelessWidget {
                     child: IdWidget(
                       id: "ID KOPYALA!",
                       onTap: () {
-                        // PRİNT TAP
+                        Get.snackbar(
+                          "Id Kopyalandı! ",
+                          "Yakınlarınızla paylaşabilirsiniz.",
+                          icon: Icon(Icons.share, color: Colors.white),
+                          snackPosition: SnackPosition.BOTTOM,
+                          colorText: Colors.white,
+                          backgroundColor: Color.fromARGB(255, 12, 220, 19),
+                        );
                       },
                     ),
                   ),
@@ -122,8 +126,8 @@ class FamilyPage extends StatelessWidget {
                           name: "Sena Yılmaz",
                         ),
                         FamilyStatsWidget(
-                          statusColor: Color.fromRGBO(133, 209, 37, 1),
-                          statusName: "Durumu İyi",
+                          statusColor: Color.fromARGB(255, 114, 115, 113),
+                          statusName: "Belirsiz!",
                           name: "Burak Yılmaz",
                         ),
                         FamilyStatsWidget(
@@ -205,5 +209,3 @@ class FamilyStatsWidget extends StatelessWidget {
     );
   }
 }
-
-

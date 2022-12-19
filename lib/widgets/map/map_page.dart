@@ -307,7 +307,7 @@ class _FamilyMapState extends State<FamilyMap> {
   addMarkers() async {
     BitmapDescriptor personbitmap = await BitmapDescriptor.fromAssetImage(
       ImageConfiguration(),
-      "assets/icon/user_ico.png",
+      "assets/icon/person.png",
     );
     markers.add(Marker(
       //add marker on google map

@@ -1,17 +1,53 @@
 import 'package:depremzede/ui/ui.dart';
 import 'package:flutter/material.dart';
-class BluetoothPage extends StatefulWidget {
-  const BluetoothPage({Key? key}) : super(key: key);
+import 'package:flutter_blue/flutter_blue.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+class BluetoothPage extends StatefulWidget {
+  BluetoothPage({Key? key}) : super(key: key);
   @override
   State<BluetoothPage> createState() => _BluetoothPageState();
 }
 
 class _BluetoothPageState extends State<BluetoothPage> {
-// check the bluetooth operationns 
+  FlutterBlue flutterBlue = FlutterBlue.instance;
+
+  @override
+  void startBlue() {
+     var adress = "20:53:7F:E5:6F:B6"; 
+    flutterBlue.startScan(timeout: Duration(seconds: 10));
+
+    Get.snackbar(
+              "Tanımlama Başlatıldı",
+               "Kişiler Aranıyor.... ",
+               snackPosition: SnackPosition.BOTTOM,
+               backgroundColor: Color.fromARGB(255, 14, 241, 22),   
+               );
+   
+    var subscription = flutterBlue.scanResults.listen((results) {
+      // do something with scan results
+      for (ScanResult r in results) {
+        print('${r.device.name} found! rssi: ${r.rssi}');
+        if(r.device.id == adress) { 
+            Get.snackbar(
+              "Cihaz Bulundu",
+               "Eşleşme Bilgileri : Yasin Çimen ",
+               icon: Icon(Icons.person, color: Colors.white),
+               snackPosition: SnackPosition.BOTTOM,
+               backgroundColor: Colors.green, 
+                 
+               );
+        }
+      }
+    });
+    
+  }
+
+// check the bluetooth operationns
   @override
   Widget build(BuildContext context) {
-     bool _auto = false;
+    bool _auto = false;
     return SafeArea(
       child: Container(
         child: Column(
@@ -35,7 +71,7 @@ class _BluetoothPageState extends State<BluetoothPage> {
             ),
             LargeCircleBtn(
               onTap: () {
-                // just audio üzerinden ses çalınacak !!
+                startBlue(); 
               },
               imagePath: "assets/icon/ear_green.png",
             ),
@@ -48,7 +84,7 @@ class _BluetoothPageState extends State<BluetoothPage> {
                 color: Color.fromRGBO(255, 255, 255, 1),
               ),
               child: Padding(
-                padding: const EdgeInsets.only(bottom:8.0,left:8.0),
+                padding: const EdgeInsets.only(bottom: 8.0, left: 8.0),
                 child: SwitchListTile(
                   activeTrackColor: Colors.green,
                   inactiveTrackColor: Colors.green,
@@ -66,8 +102,5 @@ class _BluetoothPageState extends State<BluetoothPage> {
         ),
       ),
     );
-
   }
 }
-
-
