@@ -1,6 +1,6 @@
-# Depremzede
+# Ben İyiyim
 
-Deprem anında iletişim sorunlarını çözmek için tasarlandı (MVP konseptidir.)
+Afet anında iletişim sorunlarını çözmek için tasarlandı (MVP konseptidir.)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
